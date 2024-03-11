@@ -191,6 +191,10 @@ def freq_words(clean_txt_py,lst_pos):
 conn = psycopg2.connect(host = "dpg-cnmnnn8cmk4c73aimm20-a", database = "dhp2024_dt1u", user = "saurabh", password = "qvCqmVFbSndNNiTfR6tbEljFqvZZXG36")
 cur = conn.cursor()
 
+create_table_query = """CREATE TABLE user_info (ID SERIAL PRIMARY KEY,URL VARCHAR(1000000),words_count BIGINT,sentence_count BIGINT,pos_dict VARCHAR(100000),text VARCHAR(100000000);"""
+cur.execute(create_table_query)
+conn.commit()
+
 app.secret_key =os.urandom(24)
 
 @app.route("/",methods=('POST','GET'))
