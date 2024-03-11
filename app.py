@@ -237,9 +237,8 @@ def complier():
 @app.route("/ViewDetails",methods=('POST','GET'))
 def Viewdetails():
     data_py = []
-    conn = psycopg2.connect(
-    host = "localhost", database = "dhp2024", user = "postgres", password = "Saurabh@1")
-    cur = conn.cursor() 
+    conn = psycopg2.connect(host = "dpg-cnmnnn8cmk4c73aimm20-a", database = "dhp2024_dt1u", user = "saurabh", password = "qvCqmVFbSndNNiTfR6tbEljFqvZZXG36")
+    cur = conn.cursor()
     if request.method == 'POST':
         if request.form['password'] == "sitare@1":
             cur.execute("select * from user_info")
